@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlad.lailo.lab.controller.MainController">
+    <children>
+        <HBox alignment="CENTER_LEFT" layoutX="-2.0" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1280.0">
+            <children>
+                <VBox prefHeight="720.0" prefWidth="467.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="328.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#browseAction" prefWidth="75.0" text="Browse" />
+                                <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="10.0" />
+                                <Button mnemonicParsing="false" onAction="#clearAction" prefWidth="75.0" text="Original" />
+                                <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="10.0" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="14.0" prefWidth="467.0">
+                            <children>
+                                <Label text="Filters">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <CheckBox fx:id="useCurrent" mnemonicParsing="false" text="Use Current Image" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="5.0" prefWidth="328.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#firstAction" prefWidth="75.0" text="P1" />
+                                <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="10.0" />
+                                <TextField fx:id="p1i1" prefHeight="25.0" prefWidth="50.0" text="127" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="328.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#secondAction" prefWidth="75.0" text="P2" />
+                                <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="10.0" />
+                                <TextField fx:id="p2i1" prefHeight="25.0" prefWidth="50.0" text="230" />
+                                <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="10.0" />
+                                <TextField fx:id="p2i2" prefHeight="25.0" prefWidth="50.0" text="255" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="10.0" prefWidth="328.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#thirdAction" prefWidth="75.0" text="SOBOL" />
+                                <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="10.0" />
+                                <Button mnemonicParsing="false" onAction="#grayAction" prefWidth="75.0" text="GRAY" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="13.0" prefWidth="467.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#groupAction" prefWidth="75.0" text="4K" />
+                                <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="10.0" />
+                                <Label text="Min Area:">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="minAreaField" prefWidth="50.0" text="50" />
+                                <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="10.0" />
+                                <Label text="Clusters:">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="clustersField" prefWidth="50.0" text="2" />
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <BarChart fx:id="chart" animated="false" legendVisible="false" prefHeight="399.0" prefWidth="467.0">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                            <VBox.margin>
+                                <Insets top="100.0" />
+                            </VBox.margin>
+                        </BarChart>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity">
+                    <children>
+                        <ImageView fx:id="imageView" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</Pane>
